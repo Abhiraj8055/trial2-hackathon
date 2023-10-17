@@ -20,122 +20,141 @@
         }
 
         /* Your additional styles from style.css */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", Helvetica, sans-serif;
+        }
+
         .start-screens {
-            background-color: #242424;
+            background-color: var(--middle);
             display: flex;
-            flex-direction: row;
             justify-content: center;
+        }
+
+        .container {
             width: 100%;
+            max-width: 1200px;
+            display: flex;
+        }
+
+        .left-sidebar {
+            width: 25%;
+            background-color: var(--bright);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chatbot-definition {
+            margin: 20px 0;
+        }
+
+        .text-wrapper-5 {
+            color: var(--dark);
+            font-size: 18px;
         }
 
         .start-screens .div {
-            background-color: #242424;
-            width: 1432px;
-            height: 752px;
-            position: relative;
+            width: 75%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        .start-screens .overlap {
-            position: absolute;
-            width: 1022px;
-            height: 624px;
-            top: 62px;
-            left: 320px;
-            background-color: #35353580;
-            border-radius: 6px;
-        }
-
-        .start-screens .input-field {
-            position: absolute;
-            width: 768px;
-            height: 48px;
-            top: 378px;
-            left: 112px;
-            background-color: #7a7a7a;
-            border-radius: 4px;
-            border: 1px solid;
-            border-color: #303139;
-            box-shadow: 0px 0px 6px #0000001a;
-        }
-
-        .start-screens .send {
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            top: 18px;
-            left: 740px;
-        }
-
-        .start-screens .content {
-            position: absolute;
-            width: 724px;
-            height: 234px;
-            top: 129px;
-            left: 135px;
-        }
-
-        .start-screens .box {
-            height: 63px;
-            top: 72px;
-            left: 0;
-            position: absolute;
-            width: 232px;
-        }
-
-        .start-screens .overlap-group {
-            position: relative;
-            width: 230px;
-            height: 63px;
-            background-color: var(--bright);
+        .input-field {
+            background-color: var(--gray-icons);
+            padding: 10px;
             border-radius: 5px;
         }
 
-        .start-screens .text-wrapper {
-            position: absolute;
-            width: 230px;
-            height: 63px;
-            top: 0;
-            left: 0;
-            font-family: "Inter", Helvetica;
-            font-weight: 500;
-            color: var(--white);
-            font-size: 13px;
-            text-align: center;
-            letter-spacing: 0;
-            line-height: 20px;
+        .send {
+            margin-left: 10px;
         }
 
-        /* Add more styles from style.css as needed */
+        .content {
+            margin-top: 20px;
+        }
 
+        .box {
+            background-color: var(--light);
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .text-wrapper {
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        .text-wrapper-2, .text-wrapper-3, .text-wrapper-4 {
+            font-size: 20px;
+        }
+
+        .flash {
+            margin-left: 15px;
+        }
+
+        .contrast {
+            margin-left: 10px;
+        }
+
+        .user-bubble {
+            background-color: var(--accent-green);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 60%;
+            align-self: flex-end;
+        }
+
+        .bot-bubble {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 60%;
+        }
+
+        /* Style the chat container */
+        #chatbot-container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="start-screens">
-        <div class="div">
-            <!-- Your existing HTML content goes here -->
-
-            <!-- You can add the chatbot interface here using JavaScript -->
-            <div id="chatbot-container">
-                <!-- Chat interface will be added here -->
+        <div class="container">
+            <div class="left-sidebar">
+                <div class="chatbot-definition">
+                    <div class="text-wrapper-5">Chatbot Definition</div>
+                </div>
+                <div class="new-chat-button">
+                    <div class="overlap-2">
+                        <div class="text-wrapper-6">New chat</div>
+                        <div class="plus">+</div>
+                        <div class="rectangle"></div>
+                    </div>
+                </div>
+                <div class="overlap-3">
+                    <div class="text-wrapper-7">My Chats</div>
+                    <div class="rectangle-2"></div>
+                </div>
+                <div class="text-wrapper-8">HealthGPT</div>
             </div>
-        </div>
-    </div>
-
-    <script>
-        // JavaScript code for chatbot implementation
-        // You can add your chatbot logic here
-        // Example:
-        const chatbotContainer = document.getElementById("chatbot-container");
-
-        function createChatBubble(text, isUser) {
-            const bubble = document.createElement("div");
-            bubble.className = isUser ? "user-bubble" : "bot-bubble";
-            bubble.textContent = text;
-            chatbotContainer.appendChild(bubble);
-        }
-
-        // Example usage:
-        createChatBubble("Hello, I'm your chatbot. How can I help you?", false);
-    </script>
-</body>
-</html>
+            <div class="div">
+                <div class="input-field">
+                    <img class="send" src="img/send.svg" />
+                </div>
+                <div class="content">
+                    <div class="box">
+                        <div class="text-wrapper">"Explain why I have a headache" →</div>
+                    </div>
+                    <div class="overlap-wrapper">
+                        <div class="text-wrapper">"Any idea on why I have severe backpain?" →</div>
+                    </div>
+                    <div class="overlap-group-wrapper">
+                        <div class="text-wrapper">
